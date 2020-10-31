@@ -1,0 +1,117 @@
+.form {
+    @include flex-y(false, center);
+    margin-top: -50px;
+    padding: 60px 20px;
+    font-family: $font_secondary;
+
+    form {
+        .form-group {
+            @include flex-y(false, center);
+            width: 40rem;
+
+            label {
+                width: 90%;
+                text-align: left;
+            }
+
+            input,
+            textarea {
+                margin: 30px;
+                padding: 10px;
+                width: 80%;
+                font: 16px $font_secondary;
+                border: 5px solid $secondary;
+                background-color: $rich;
+                transition: background-color 1s;
+                outline: none;
+
+                &:focus {
+                    background-color: $white;
+                }
+            }
+
+            input {
+                height: 3rem;
+            }
+
+            input[type="submit"] {
+                cursor: pointer;
+                padding: 0;
+                width: 60%;
+                font-family: $font_secondary;
+
+                &:active {
+                    background-color: $secondary;
+                    transform: scale3d(0.99, 0.99, 0.99);
+                    transition: transform 0.1s, background-color 0.1s;
+                }
+            }
+        }
+
+        .checkbox-group {
+            @include flex-x(center);
+            margin: 20px;
+
+            label {
+                #terms-signup,
+                #terms-contact {
+                    font-size: 16px;
+                    color: $secondary;
+                    text-decoration: underline;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $primary;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            input {
+                cursor: pointer;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid $secondary;
+                background-color: $rich;
+                appearance: none;
+                outline: none;
+
+                &:active {
+                    transform: scale(0.9);
+                    transition: transform 0.1s;
+                }
+                &:checked {
+                    background-color: $secondary;
+                }
+            }
+
+            #mobile-newsletter-label {
+                display: none;
+            }
+        }
+    }
+
+    .recover-password {
+        margin: 0 auto;
+        width: fit-content;
+
+        #recover-link {
+            cursor: pointer;
+            font-size: 16px;
+            color: $secondary;
+            text-decoration: underline;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+
+    #recover-alert {
+        position: relative;
+        top: -30%;
+    }
+}

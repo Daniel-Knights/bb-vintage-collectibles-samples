@@ -1,0 +1,224 @@
+.checkout-body .checkout-table {
+    @include flex-y(false, center);
+    margin-top: 50px;
+    border-bottom: 1px solid rgba($black, 0.1);
+
+    table {
+        background-color: $rich;
+        border: 3px double $secondary;
+
+        tr:nth-child(odd) {
+            background-color: $white;
+        }
+
+        th,
+        td {
+            padding: 5px 20px;
+            max-width: 400px;
+            border: 1px solid rgba($secondary, 0.5);
+        }
+
+        th {
+            text-decoration: underline;
+        }
+
+        td,
+        p {
+            font: 14px $font_secondary;
+            text-align: center;
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 75px;
+        }
+
+        .checkout-remove {
+            cursor: pointer;
+            width: 15px;
+        }
+
+        #checkout-total {
+            font: 16px $font_primary;
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 50px 200px;
+        }
+    }
+
+    .checkout-break {
+        margin: 0;
+        color: $secondary;
+    }
+
+    #checkout-complete {
+        width: 33%;
+    }
+
+    img {
+        width: 55px;
+    }
+}
+
+.payment-container {
+    @include flex-y(false, center);
+    padding: 50px 0 300px;
+
+    .delivery-details {
+        margin-bottom: 30px;
+        border: 3px double $secondary;
+
+        .delivery-title {
+            @include flex-x(space-between, center);
+            margin: 20px;
+            border-bottom: 1px solid rgba($secondary, 0.5);
+            background-color: $rich;
+
+            h3,
+            p {
+                padding: 0 10px;
+            }
+
+            p:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .form {
+            padding: 60px 20px 40px 20px;
+
+            label {
+                padding: 5px 10px;
+                border-bottom: 1px solid rgba($secondary, 0.5);
+            }
+
+            #delivery-msg {
+                margin-top: -10px;
+                font-size: 12px;
+            }
+
+            button {
+                margin-top: 30px;
+                width: 50%;
+            }
+        }
+    }
+
+    .checkout-email {
+        @include flex-y(false, false);
+        margin: 0 20px 20px 20px;
+        padding: 20px 150px;
+        border: 3px double $secondary;
+
+        .checkout-email-title {
+            @include flex-x(space-between, center);
+            margin: 5px;
+            padding: 5px;
+            font-size: 18px;
+            background-color: $rich;
+            border-bottom: 1px solid rgba($secondary, 0.5);
+
+            p {
+                margin: 0;
+                font-size: 16px;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        small {
+            font-family: $font_secondary;
+        }
+
+        .checkout-email-terms {
+            @include flex-x(center, center);
+            margin: 20px;
+            font-family: $font_secondary;
+
+            a {
+                color: $secondary;
+                text-decoration: underline;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: $primary;
+                    text-decoration: none;
+                }
+            }
+
+            input[type="checkbox"] {
+                cursor: pointer;
+                margin: 0 20px 0 10px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid $secondary;
+                background-color: $rich;
+                appearance: none;
+                outline: none;
+
+                &:active {
+                    transform: scale(0.9);
+                    transition: transform 0.1s;
+                }
+                &:checked {
+                    background-color: $secondary;
+                }
+            }
+        }
+
+        .checkout-email-group {
+            @include flex-x(false, center);
+
+            input {
+                margin: 0 5px 30px 5px;
+                padding: 10px;
+                width: 75%;
+                height: 40px;
+                font-size: 16px;
+                border: 3px solid $secondary;
+                background-color: $rich;
+                transition: background-color 1s;
+                outline: none;
+
+                &:focus {
+                    background-color: $white;
+                }
+            }
+
+            button {
+                margin: 0 5px 30px 5px;
+                padding: 10px;
+                width: 25%;
+            }
+        }
+
+        #checkout-email-msg {
+            margin: -20px 0 10px 0;
+            font-size: 12px;
+        }
+    }
+
+    #checkout-loading {
+        img {
+            margin: 50px;
+            width: 100px;
+        }
+    }
+
+    #paypal-btn-container {
+        @include flex-x(center);
+        width: 75%;
+        z-index: 0;
+    }
+}
